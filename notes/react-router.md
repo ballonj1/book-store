@@ -97,3 +97,7 @@ const Invoices = () => (
 
   * To get your intuition in line with React Router's, think about components, not static routes
   * Think about how to solve the problem with React's declarative composability because nearly every "React Router question" is probably a "React question"
+
+
+# Scroll to the Top
+Most of the time all you need is to “scroll to the top” because you have a long content page, that when navigated to, stays scrolled down. This is straightforward to handle with a <ScrollToTop> component that will scroll the window up on every navigation, make sure to wrap it in withRouter to give it access to the router’s props:
