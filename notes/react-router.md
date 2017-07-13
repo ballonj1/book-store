@@ -101,3 +101,14 @@ const Invoices = () => (
 
 # Scroll to the Top
 Most of the time all you need is to “scroll to the top” because you have a long content page, that when navigated to, stays scrolled down. This is straightforward to handle with a <ScrollToTop> component that will scroll the window up on every navigation, make sure to wrap it in withRouter to give it access to the router’s props:
+
+# Redux Integration
+
+## Blocked Updates
+Generally, React Router and Redux work just fine together. Occasionally though, an app can have a component that doesn’t update when the location changes (child routes or active nav links don’t update).
+
+This happens if:
+
+The component is connected to redux via connect()(Comp).
+The component is not a “route component”, meaning it is not rendered like so: <Route component={SomeConnectedThing}/>
+The problem is that Redux implements shouldComponentUpdate and there’s no indication that anything has changed if it isn’t receiving props from the router. This is straightforward to fix. Find where you connect your component and wrap it in withRouter.
