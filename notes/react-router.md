@@ -127,3 +127,10 @@ Route children as ({ match }) => ()
 withRouter as this.props.match
 matchPath as the return value
 If a Route does not have a path, and therefore always matches, you’ll get the closest parent match. Same goes for withRouter.
+
+# BrowserRouter
+  * Allows you to manage the session by using the History API
+# HashRouter
+  * Allows you to manage the session using window.location.hash
+  * Uses the hash portion of the url to keep your session in check
+  * Typically used for older browsers
